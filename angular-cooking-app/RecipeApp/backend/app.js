@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const Post = require("./models/post");
-const config = fs.
+const config = JSON.parse(fs.readFileSync('./config.json'));
 const app = express();
 //MongodbAtlas
 mongoose
