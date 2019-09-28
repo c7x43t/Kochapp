@@ -8,7 +8,7 @@ const app = express();
 //MongodbAtlas
 mongoose
   .connect(
-    "mongodb+srv://backend-PostApp:VPFmWdPffmbXwHNO@onyxdbcluster-kau9m.mongodb.net/PostAppDb?retryWrites=true&w=majority"
+    "mongodb+srv://backend-PostApp:<dbpassword>@onyxdbcluster-kau9m.mongodb.net/PostAppDb?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("Connected to database!");
