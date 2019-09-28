@@ -60,5 +60,5 @@ typings/
 # next.js build output
 .next
 
-#
+# Mongo Atlas password
 angular-cooking-app/RecipeApp/backend/config.json
