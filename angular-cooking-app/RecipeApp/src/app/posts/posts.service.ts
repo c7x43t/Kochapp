@@ -15,7 +15,7 @@ export class PostsService {
   getPosts() {
     this.http
       .get<{ message: string; posts: any }>(
-        "http://157.230.100.170:80/api/posts"
+        `http://${location.hostname}:80/api/posts`
       )
       .pipe(map((postData) => {
         return postData.posts.map(post => {
@@ -39,7 +39,7 @@ export class PostsService {
   addPost(title: string, content: string) {
     const post: Post = { id: null, title: title, content: content };
     this.http
-      .post<{ message: string, postId: string }>("http://157.230.100.170:80/api/posts", post)
+      .post<{ message: string, postId: string }>(`http://${location.hostname}:80/api/posts`, post)
       .subscribe(responseData => {
         const id = responseData.postId;
         post.id = id;
@@ -49,7 +49,7 @@ export class PostsService {
   }
 
   deletePost(postId: string) {
-    this.http.delete("http://157.230.100.170:80/api/posts/" + postId)
+    this.http.delete(`http://${location.hostname}:80/api/posts/` + postId)
       .subscribe(() => {
         const updatedPosts = this.posts.filter(post => post.id !== postId);
         this.posts = updatedPosts;
