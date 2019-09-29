@@ -24,13 +24,9 @@
       <mat-error *ngIf="content.invalid">Please enter some content.</mat-error>
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Category</mat-label>
+        <mat-label>Choose a category</mat-label>
         <mat-select>
-          <mat-option *ngFor="let category of categories" [value]="category.value"
-            name="category"
-            ngModel
-            required
-            #category="ngModel">
+          <mat-option *ngFor="let category of categories" [value]="category.value">
             {{category.viewValue}}
           </mat-option>
         </mat-select>
