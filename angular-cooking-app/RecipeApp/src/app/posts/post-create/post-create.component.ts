@@ -16,7 +16,12 @@ export interface Category {
 export class PostCreateComponent {
   enteredTitle = "";
   enteredContent = "";
-  selectedCategory = "";
+
+
+  categories: Category[] = [
+    { value: 'vegan', viewValue: 'Vegan'},
+    { value: 'meat', viewValue: 'Meatlover'}
+  ];
 
   constructor(public postsService: PostsService) {}
 
@@ -25,7 +30,11 @@ export class PostCreateComponent {
       return;
     }
     this.postsService.addPost(form.value.title, form.value.content);
-    console.log(form.value.selectedCategory);
     form.resetForm();
   }
+
+  changeCategory(value) {
+    console.log(value);
+  }
+
 }
