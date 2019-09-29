@@ -15,7 +15,7 @@ export class PostsService {
   getPosts() {
     this.http
       .get<{ message: string; posts: any }>(
-        "http://localhost:80/api/posts"
+        "http://157.230.100.170:80/api/posts"
       )
       .pipe(map((postData) => {
         return postData.posts.map(post => {
