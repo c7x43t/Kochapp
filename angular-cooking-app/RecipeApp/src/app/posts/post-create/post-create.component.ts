@@ -29,12 +29,9 @@ export class PostCreateComponent {
     if (form.invalid) {
       return;
     }
+    console.log(form.value.category);
     this.postsService.addPost(form.value.title, form.value.content);
     form.resetForm();
-  }
-
-  changeCategory(value) {
-    console.log(value);
   }
 
 }
