@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-
+const fs = require("fs");
 const Post = require("./models/post");
 const config = JSON.parse(fs.readFileSync('./config.json'));
 const app = express();
