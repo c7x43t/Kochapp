@@ -4,7 +4,6 @@ import { Subject } from "rxjs";
 import { map } from 'rxjs/operators';
 
 import { Post } from "./post.model";
-import { PortalHostDirective } from "@angular/cdk/portal";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
