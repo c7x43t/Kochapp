@@ -30,14 +30,6 @@
             {{category.viewValue}}
           </mat-option>
         </mat-select>
-      <textarea
-        matInput
-        rows="4"
-        name="category"
-        ngModel
-        required
-        placeholder="Category"
-        #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please choose a category</mat-error>
     </mat-form-field>
     <button
