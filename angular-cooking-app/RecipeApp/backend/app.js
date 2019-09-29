@@ -38,7 +38,7 @@ app.post("/api/posts", (req, res, next) => {
   const post = new Post({
     title: req.body.title,
     content: req.body.content,
-    category: req.body.content
+    category: req.body.category
   });
   post.save().then(createdPost => {
     res.status(201).json({
