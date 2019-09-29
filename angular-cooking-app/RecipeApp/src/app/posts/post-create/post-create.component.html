@@ -23,6 +23,23 @@
         #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please enter some content.</mat-error>
     </mat-form-field>
+    <mat-form-field>
+        <mat-label>Choose a category</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let category of categories" [value]="category.value">
+            {{category.viewValue}}
+          </mat-option>
+        </mat-select>
+      <textarea
+        matInput
+        rows="4"
+        name="category"
+        ngModel
+        required
+        placeholder="Category"
+        #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Please choose a category</mat-error>
+    </mat-form-field>
     <button
       mat-raised-button
       color="accent"
