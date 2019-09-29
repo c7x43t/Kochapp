@@ -1,1 +1,11 @@
-<mat-toolbar color="primary">Ying&Yang Cooking App</mat-toolbar>
+<mat-toolbar color="primary">
+    <span>
+        <a routerLink="/">Ying&Yang Cooking App</a>
+    </span>
+    <span class="spacer"></span>
+    <ul>
+        <li>
+            <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Recipe</a>
+        </li>
+    </ul>
+</mat-toolbar>
