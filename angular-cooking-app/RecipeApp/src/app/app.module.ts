@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { MatSelectModule, MatDividerModule } from "@angular/material";
+import { MatSelectModule, MatDividerModule, MatChipsModule} from "@angular/material";
 import {
   MatInputModule,
   MatCardModule,
@@ -35,6 +35,7 @@ import { PostListComponent } from "./posts/post-list/post-list.component";
     MatExpansionModule,
     MatSelectModule,
     MatDividerModule,
+    MatChipsModule,
     HttpClientModule
   ],
   exports: [
