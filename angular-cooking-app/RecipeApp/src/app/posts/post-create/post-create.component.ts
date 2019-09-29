@@ -16,10 +16,16 @@ export interface Category {
 export class PostCreateComponent {
   enteredTitle = "";
   enteredContent = "";
+  chosenCategory = "";
+
   categories: Category[] = [
     { value: 'vegan', viewValue: 'Vegan'},
     { value: 'meat', viewValue: 'Meatlover'}
   ];
+
+  onCategorySelection(form: NgForm) {
+    this.chosenCategory = form.value.category;
+  }
 
   constructor(public postsService: PostsService) {}
 
@@ -27,7 +33,7 @@ export class PostCreateComponent {
     if (form.invalid) {
       return;
     }
-    this.postsService.addPost(form.value.title, form.value.content, form.value.category);
+    this.postsService.addPost(form.value.title, form.value.content, this.chosenCategory);
     form.resetForm();
   }
 }
