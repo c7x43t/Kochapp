@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const fs = require("fs");
 const Post = require("./models/post");
 const config = JSON.parse(fs.readFileSync('./config.json'));
-const app = express();
+const app = express(); 
 //MongodbAtlas
 mongoose
   .connect(
