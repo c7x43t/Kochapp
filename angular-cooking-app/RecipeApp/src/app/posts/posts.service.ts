@@ -4,6 +4,7 @@ import { Subject } from "rxjs";
 import { map } from 'rxjs/operators';
 
 import { Post } from "./post.model";
+import { PortalHostDirective } from "@angular/cdk/portal";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
@@ -36,6 +37,10 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
+  getPost(id: string) {
+    return this.http.get<{_id: string, title: string, content: string, category: string}>(`http://${location.hostname}:80/api/posts/` + id);
+  }
+
   addPost(title: string, content: string, category: string) {
     const post: Post = { id: null, title: title, content: content, category: category};
     this.http
@@ -44,6 +49,18 @@ export class PostsService {
         const id = responseData.postId;
         post.id = id;
         this.posts.push(post);
+        this.postsUpdated.next([...this.posts]);
+      });
+  }
+
+  updatePost(id: string, title: string, content: string, category: string) {
+    const post: Post = { id: id, title: title, content: content, category: category};
+    this.http.put(`http://${location.hostname}:80/api/posts/` + id, post)
+      .subscribe(response => {
+        const updatedPosts = [...this.posts];
+        const oldPostIndex = updatedPosts.findIndex(p => p.id === post.id);
+        updatedPosts[oldPostIndex] = post;
+        this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts]);
       });
   }

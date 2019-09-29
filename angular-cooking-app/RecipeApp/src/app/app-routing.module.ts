@@ -6,8 +6,9 @@ import { PostListComponent } from "./posts/post-list/post-list.component";
 //Routing module to give a feeling of different pages
 
 const routes: Routes = [
-    { path: '', component: PostCreateComponent },
-    { path: 'create', component: PostListComponent }
+    { path: '', component: PostListComponent },
+    { path: 'create', component: PostCreateComponent },
+    { path: 'edit/:postId', component: PostCreateComponent }
 ];
 
 @NgModule({
