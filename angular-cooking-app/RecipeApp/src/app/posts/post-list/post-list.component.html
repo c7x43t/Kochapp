@@ -5,8 +5,7 @@
     </mat-expansion-panel-header>
     <p>Description: {{ post.content }}</p>
     <mat-divider></mat-divider>
-    <p>Categories:</p>
-    <mat-chip color="accent">{{ post.category }}</mat-chip>
+    <p>Category: {{ post.category }}</p>
     <mat-action-row>
       <button mat-button color="primary">EDIT</button>
       <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
