@@ -16,6 +16,8 @@ export interface Category {
 export class PostCreateComponent {
   enteredTitle = "";
   enteredContent = "";
+
+
   categories: Category[] = [
     { value: 'vegan', viewValue: 'Vegan'},
     { value: 'meat', viewValue: 'Meatlover'}
@@ -28,6 +30,7 @@ export class PostCreateComponent {
       return;
     }
     this.postsService.addPost(form.value.title, form.value.content);
+    console.log(this.categories.values);
     form.resetForm();
   }
 }
