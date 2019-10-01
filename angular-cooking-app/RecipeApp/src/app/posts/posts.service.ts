@@ -19,6 +19,7 @@ export class PostsService {
       )
       .pipe(map((postData) => {
         return postData.posts.map(post => {
+          console.log(post);
           return {
             title: post.title,
             content: post.content,
