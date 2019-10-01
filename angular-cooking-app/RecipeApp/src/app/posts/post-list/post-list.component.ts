@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { Post } from "../post.model";
 import { PostsService } from "../posts.service";
 
+import { MatGridListModule } from "@angular/material";
+
 @Component({
   selector: "app-post-list",
   templateUrl: "./post-list.component.html",

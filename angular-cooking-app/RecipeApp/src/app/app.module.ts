@@ -9,7 +9,8 @@ import {
   MatCardModule,
   MatButtonModule,
   MatToolbarModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatGridListModule
 } from "@angular/material";
 
 import { AppComponent } from "./app.component";
@@ -39,10 +40,12 @@ import { ContentSectionComponent } from './content-section/content-section.compo
     MatExpansionModule,
     MatSelectModule,
     MatDividerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
   exports: [
-    MatDividerModule
+    MatDividerModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
