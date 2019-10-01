@@ -27,7 +27,6 @@
         <mat-label>Choose a category</mat-label>
         <mat-select #category="ngModel" name="category" [ngModel]="post?.category">
           <mat-option *ngFor="let category of categories" [ngModel]="category.value">
-            {{category.viewValue}}
           </mat-option>
         </mat-select>
       <mat-error *ngIf="content.invalid">Please choose a category</mat-error>
