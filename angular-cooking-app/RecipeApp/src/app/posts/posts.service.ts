@@ -22,6 +22,7 @@ export class PostsService {
           return {
             title: post.title,
             content: post.content,
+            category: post.category,
             id: post._id
           };
         });
